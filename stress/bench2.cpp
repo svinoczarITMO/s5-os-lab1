@@ -13,7 +13,7 @@ void dijkstra(const vector<vector<pair<int, int> > >& graph, int start) {
     dist[start] = 0;
 
     priority_queue<pair<int, int>, vector<pair<int, int> >, greater<pair<int, int> > > pq;
-    pq.push(make_pair(0, start)); // Изменено на std::make_pair
+    pq.push(make_pair(0, start)); 
 
     while (!pq.empty()) {
         int d = pq.top().first;
@@ -28,7 +28,7 @@ void dijkstra(const vector<vector<pair<int, int> > >& graph, int start) {
 
             if (dist[u] + weight < dist[v]) {
                 dist[v] = dist[u] + weight;
-                pq.push(make_pair(dist[v], v)); // Изменено на std::make_pair
+                pq.push(make_pair(dist[v], v)); 
             }
         }
     }
@@ -43,12 +43,12 @@ void shortPath(int repetitions) {
         for (int j = 0; j < 10; ++j) { // Каждая вершина соединена с 10 случайными
             int v = rand() % n;
             int weight = rand() % 10 + 1; // Вес ребра от 1 до 10
-            graph[i].push_back(make_pair(v, weight)); // Изменено на std::make_pair
+            graph[i].push_back(make_pair(v, weight));
         }
     }
 
     for (int i = 0; i < repetitions; ++i) {
-        dijkstra(graph, 0); // Запускаем алгоритм Дейкстры от вершины 0
+        dijkstra(graph, 0); // 
     }
 }
 

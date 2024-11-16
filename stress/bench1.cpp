@@ -5,7 +5,7 @@
 #include <cstdlib>
 
 double calculateEMA(const std::vector<double>& data, double alpha) {
-    double ema = data[0]; // Начальное значение
+    double ema = data[0]; 
     for (size_t i = 1; i < data.size(); ++i) {
         ema = alpha * data[i] + (1 - alpha) * ema;
     }
@@ -14,7 +14,6 @@ double calculateEMA(const std::vector<double>& data, double alpha) {
 
 void emaSearchStr(int repetitions) {
     std::vector<double> data;
-    // Генерация случайных значений
     for (int i = 0; i < 1000; ++i) {
         data.push_back(static_cast<double>(rand()) / RAND_MAX);
     }
